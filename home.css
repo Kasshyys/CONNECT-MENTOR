@@ -1,0 +1,203 @@
+/* ---------- General Reset ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: #1b1b1b;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* ---------- Navbar ---------- */
+.navbar {
+  width: 100%;
+  padding: 20px 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 2px solid #444;
+  border-radius: 20px;
+  background-color: rgba(28, 28, 28, 0.9);
+  position: fixed;
+  top: 10px;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  backdrop-filter: blur(10px);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo img {
+  width: 50px;
+  height: 50px;
+}
+
+.logo h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.logo span {
+  color: #2b85ff;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  border: 2px solid #444;
+  padding: 8px 20px;
+  border-radius: 25px;
+  transition: 0.3s;
+}
+
+.nav-links a.active,
+.nav-links a:hover {
+  background-color: white;
+  color: black;
+  border-color: #2e9eff;
+}
+
+/* ---------- Mobile Menu ---------- */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.bar {
+  height: 3px;
+  width: 25px;
+  background-color: white;
+  border-radius: 5px;
+}
+
+/* ---------- Hero Section ---------- */
+.hero {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: flex-end; /* Move content to bottom */
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+  padding-bottom: 80px; /* space from bottom */
+}
+
+/* Background Video setup */
+#bg-video {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: cover;
+  z-index: -1;
+  filter: brightness(60%);
+}
+
+/* Hero text content */
+.hero-content {
+  position: relative;
+  z-index: 2;
+  animation: fadeIn 2s ease-in-out;
+}
+
+.hero-content h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #f1f1f1;
+  letter-spacing: 1px;
+}
+
+.hero-content .btn {
+  display: inline-block;
+  margin: 25px 0 8px;
+  padding: 12px 30px;
+  border: 2px solid #fff;
+  border-radius: 25px;
+  background-color: transparent;
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.hero-content .btn:hover {
+  background-color: white;
+  color: black;
+}
+
+.hero-content p {
+  font-size: 1.1rem;
+  color: #ccc;
+}
+
+/* ---------- Fade-in Animation ---------- */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 768px) {
+  .nav-links {
+    position: absolute;
+    top: 80px;
+    right: 50px;
+    background-color: rgba(28, 28, 28, 0.95);
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    border: 2px solid #444;
+    border-radius: 15px;
+    padding: 20px;
+    display: none;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  .hero-content h2 {
+    font-size: 1.4rem;
+  }
+
+  .hero-content .btn {
+    padding: 10px 25px;
+  }
+
+  .hero {
+    padding-bottom: 60px;
+  }
+}

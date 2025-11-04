@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mentor Signup Form</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #0d1117;
+      color: #e6edf3;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 30px;
+    }
+
+    .mentor-form {
+      background-color: #161b22;
+      border: 1px solid #30363d;
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+      width: 700px;
+      padding: 40px;
+    }
+
+    h2 {
+      text-align: center;
+      color: #00bfff;
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+
+    p {
+      text-align: center;
+      color: #8b949e;
+      margin-bottom: 30px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 500;
+      color: #c9d1d9;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 12px;
+      border-radius: 10px;
+      border: 1px solid #30363d;
+      background-color: #0d1117;
+      color: #e6edf3;
+      font-size: 15px;
+      outline: none;
+      transition: border-color 0.3s ease;
+    }
+
+    input:focus, select:focus, textarea:focus {
+      border-color: #00bfff;
+      box-shadow: 0 0 8px rgba(0, 191, 255, 0.3);
+    }
+
+    textarea {
+      resize: none;
+    }
+
+    .two-col {
+      display: flex;
+      gap: 20px;
+    }
+
+    .two-col .form-group {
+      flex: 1;
+    }
+
+    .submit-btn {
+      width: 100%;
+      background-color: #00bfff;
+      color: #0d1117;
+      border: none;
+      border-radius: 10px;
+      padding: 14px;
+      font-size: 17px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      margin-top: 10px;
+    }
+
+    .submit-btn:hover {
+      background-color: #0099cc;
+      transform: translateY(-2px);
+    }
+
+    input[type="file"] {
+      padding: 8px;
+      background-color: #0d1117;
+    }
+  </style>
+</head>
+<body>
+
+  <form class="mentor-form" action="https://getform.io/f/bjjrprdb" method="POST">
+    <h2>Mentor Signup</h2>
+    <p>Fill in your professional and mentoring details below</p>
+
+    <!-- Basic Information -->
+    <h3>Basic Information</h3>
+    <div class="two-col">
+      <div class="form-group">
+        <label for="fullName">Full Name *</label>
+        <input type="text" id="fullName" name="fullName" placeholder="Enter your full name" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Email ID *</label>
+        <input type="email" id="email" name="email" placeholder="example@email.com" required>
+      </div>
+    </div>
+
+    <div class="two-col">
+      <div class="form-group">
+        <label for="phone">Phone Number </label>
+        <input type="tel" id="phone" name="phone" placeholder="+91 9876543210">
+      </div>
+      <div class="form-group">
+        <label for="password">Password *</label>
+        <input type="password" id="password" name="password" placeholder="Create a password" required>
+      </div>
+    </div>
+
+    <!-- Professional Details -->
+    <h3>Professional Details</h3>
+    <div class="two-col">
+      <div class="form-group">
+        <label for="role">Current Role / Designation *</label>
+        <input type="text" id="role" name="role" placeholder="Senior Developer, Professor, etc." required>
+      </div>
+      <div class="form-group">
+        <label for="company">Company / Organization *</label>
+        <input type="text" id="company" name="company" placeholder="Enter your company name" required>
+      </div>
+    </div>
+
+    <div class="two-col">
+      <div class="form-group">
+        <label for="experience">Years of Experience *</label>
+        <input type="number" id="experience" name="experience" placeholder="e.g., 5" min="0" required>
+      </div>
+      <div class="form-group">
+        <label for="industry">Industry *</label>
+        <input type="text" id="industry" name="industry" placeholder="IT, Finance, Education, etc." required>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="expertise">Area(s) of Expertise *</label>
+      <input type="text" id="expertise" name="expertise" placeholder="Web Dev, AI, Data Science..." required>
+    </div>
+
+    <div class="form-group">
+      <label for="skills">Skills / Technologies *</label>
+      <input type="text" id="skills" name="skills" placeholder="HTML, CSS, Python, React, etc." required>
+    </div>
+
+    <div class="form-group">
+      <label for="linkedin">LinkedIn / Portfolio (optional)</label>
+      <input type="url" id="linkedin" name="linkedin" placeholder="https://linkedin.com/in/yourprofile">
+    </div>
+
+    <!-- Mentoring Preferences -->
+    <h3>Mentoring Preferences</h3>
+
+    <div class="form-group">
+      <label for="topics">Preferred Mentorship Topics *</label>
+      <input type="text" id="topics" name="topics" placeholder="Career Guidance, Business, etc." required>
+    </div>
+
+    <div class="two-col">
+      <div class="form-group">
+        <label for="availability">Availability *</label>
+        <input type="text" id="availability" name="availability" placeholder="Weekends, 6-9 PM, etc." required>
+      </div>
+      <div class="form-group">
+        <label for="mode">Mode of Mentoring *</label>
+        <select id="mode" name="mode" required>
+          <option value="">Select Mode</option>
+          <option value="video">Video Call</option>
+          <option value="chat">Chat</option>
+          
+        </select>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="languages">Languages Known *</label>
+      <input type="text" id="languages" name="languages" placeholder="English, Hindi, Bengali..." required>
+    </div>
+
+    <div class="form-group">
+      <label for="bio">Short Bio / About Me *</label>
+      <textarea id="bio" name="bio" rows="4" placeholder="Write a short introduction..." required></textarea>
+    
+      <label>Profile Picture (Optional)</label>
+          <input type="file" id="profile" accept="image/*" />
+    </div>
+
+
+   
+
+    <button type="submit" class="submit-btn">Submit Mentor Application</button>
+  </form>
+
+</body>
+</html>

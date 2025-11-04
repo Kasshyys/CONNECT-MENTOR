@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mentee Dashboard - Profile</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    /* ---------- Base Dark Theme ---------- */
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      background-color: #0f172a;
+      color: #f1f5f9;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      padding: 40px 20px;
+    }
+
+    .dashboard-container {
+      background-color: #1e293b;
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(255,255,255,0.1);
+      width: 90%;
+      max-width: 900px;
+      overflow: hidden;
+      animation: fadeIn 0.7s ease;
+    }
+
+    .profile-header {
+      background: linear-gradient(135deg, #3b82f6, #0ea5e9);
+      padding: 30px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .profile-header img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      border: 3px solid #fff;
+      object-fit: cover;
+    }
+
+    .profile-header h2 {
+      margin: 0;
+      font-size: 1.8em;
+      color: #fff;
+    }
+
+    .profile-header p {
+      margin: 5px 0 0;
+      color: #e0f2fe;
+      font-size: 0.95em;
+    }
+
+    .profile-content {
+      padding: 25px 30px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .section {
+      background-color: #334155;
+      padding: 20px;
+      border-radius: 12px;
+      transition: transform 0.2s ease;
+    }
+
+    .section:hover {
+      transform: translateY(-5px);
+    }
+
+    .section h3 {
+      margin-top: 0;
+      color: #38bdf8;
+      font-size: 1.2em;
+      border-bottom: 1px solid #475569;
+      padding-bottom: 8px;
+      margin-bottom: 12px;
+    }
+
+    .section p {
+      font-size: 0.95em;
+      line-height: 1.5;
+      color: #e2e8f0;
+    }
+
+    .full-width {
+      grid-column: 1 / -1;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .edit-btn {
+      display: inline-block;
+      background-color: #3b82f6;
+      color: white;
+      padding: 10px 18px;
+      border-radius: 8px;
+      text-decoration: none;
+      margin-top: 15px;
+      transition: background 0.3s ease;
+    }
+
+    .edit-btn:hover {
+      background-color: #2563eb;
+    }
+
+    @media (max-width: 700px) {
+      .profile-content {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="dashboard-container">
+    <div class="profile-header">
+      <img src="https://via.placeholder.com/100" alt="Mentee Profile Photo">
+      <div>
+        <h2 id="mentee-name">Nitin</h2>
+        <p id="mentee-email"><i class="fa-solid fa-envelope"></i> nitinz@example.com</p>
+      </div>
+    </div>
+
+    <div class="profile-content">
+      <div class="section">
+        <h3><i class="fa-solid fa-user"></i> Personal & Career</h3>
+        <p id="mentee-personal">Aspiring software engineer passionate about AI and mentorship-driven growth.</p>
+      </div>
+
+      <div class="section">
+        <h3><i class="fa-solid fa-graduation-cap"></i> Current Education</h3>
+        <p id="mentee-education">B.Tech in Computer Science, ICFAI University, Jharkhand (2023-2027)</p>
+      </div>
+
+      <div class="section">
+        <h3><i class="fa-solid fa-lightbulb"></i> Areas of Interest</h3>
+        <p id="mentee-interest">Machine Learning, Web Development, Cloud Computing</p>
+      </div>
+
+      <div class="section">
+        <h3><i class="fa-solid fa-bullseye"></i> Goals (Why Joined Mentor Connect)</h3>
+        <p id="mentee-goals">To gain practical guidance on real-world projects and improve my communication & teamwork skills.</p>
+      </div>
+
+      <div class="section">
+        <h3><i class="fa-solid fa-laptop-code"></i> Skills</h3>
+        <p id="mentee-skills">Prior Knowledge: HTML, CSS, Python<br>
+        Want to Learn: JavaScript, React, Data Science</p>
+      </div>
+
+      <div class="section">
+        <h3><i class="fa-solid fa-handshake"></i> Preferred Connection Method</h3>
+        <p id="mentee-connection">Video Calls and Chat Sessions</p>
+      </div>
+
+      <div class="section full-width" style="text-align:center;">
+        <a href="menteesignup.html" class="edit-btn"><i class="fa-solid fa-pen"></i> Edit Profile</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Example: You can dynamically load mentee data here using JS from a database or localStorage
+    // Example placeholder data is already filled above.
+  </script>
+</body>
+</html>

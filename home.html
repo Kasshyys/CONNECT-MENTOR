@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mentor Connect</title>
+  <link rel="stylesheet" href="home.css" />
+</head>
+<body>
+  <!-- Navbar Section -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <img src="IMAGES/LOGO.png" alt="Mentor Connect Logo" />
+        <h1>MENTOR CONNECT</h1>
+      </div>
+
+      <div class="menu-toggle" id="mobile-menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+
+      <ul class="nav-links">
+        <li><a href="home.html" class="active">Home</a></li>
+        <li><a href="loginregis.htm">Sign In</a></li>
+        <li><a href="mentor.html">Mentors</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="service.html">Service</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section with Background Video -->
+  <section class="hero">
+    <div class="hero-content">
+      <h2>UNLOCK YOUR POTENTIAL. CONNECT,</h2>
+      <h2>LEARN, AND GROW WITH MENTOR CONNECT.</h2>
+      <a href="loginregis.htm" class="btn">REGISTER NOW</a>
+      <p>To Book Your Slot</p>
+    </div>
+  </section>
+
+  <!-- Script for mobile menu -->
+  <script>
+    const mobileMenu = document.getElementById("mobile-menu");
+    const navLinks = document.querySelector(".nav-links");
+
+    mobileMenu.addEventListener("click", () => {
+      mobileMenu.classList.toggle("active");
+      navLinks.classList.toggle("active");
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Mentor Slot Booking (Dark Theme)</title>
+    <script>
+  (function() {
+    emailjs.init("RJeZMa4vSGQOkK-Dj"); // Replace with your actual EmailJS Public Key
+  })();
+</script>
+
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <style>
+      /* ---------- Dark Modern Theme ---------- */
+      body {
+        font-family: "Poppins", sans-serif;
+        background: radial-gradient(circle at top, #1c1c1c, #0e0e0e);
+        color: #e0e0e0;
+        margin: 0;
+        padding: 40px 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      h2 {
+        color: #fff;
+        font-size: 1.8rem;
+        margin-bottom: 10px;
+      }
+
+      p {
+        color: #bbb;
+        text-align: center;
+        max-width: 600px;
+      }
+
+      .booking-card {
+        background: rgba(30, 30, 30, 0.9);
+        backdrop-filter: blur(10px);
+        border-radius: 15px;
+        padding: 30px;
+        max-width: 500px;
+        width: 100%;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+        margin-top: 20px;
+      }
+
+      label {
+        display: block;
+        margin-top: 15px;
+        font-weight: 500;
+      }
+
+      select,
+      input {
+        padding: 10px;
+        font-size: 14px;
+        width: 100%;
+        background-color: #1e1e1e;
+        border: 1px solid #333;
+        border-radius: 8px;
+        color: #f1f1f1;
+        margin-top: 5px;
+      }
+
+      select:focus,
+      input:focus {
+        border-color: #007bff;
+        outline: none;
+      }
+
+      button {
+        margin-top: 20px;
+        padding: 12px;
+        font-size: 15px;
+        width: 100%;
+        background-color: #007bff;
+        border: none;
+        border-radius: 8px;
+        color: #fff;
+        cursor: pointer;
+        font-weight: 500;
+        transition: 0.3s;
+      }
+
+      button:hover {
+        background-color: #0056d2;
+        transform: translateY(-2px);
+      }
+
+      .output-box {
+        background: #111;
+        color: #9efc8e;
+        padding: 12px;
+        border-radius: 8px;
+        margin-top: 15px;
+        white-space: pre-wrap;
+        border: 1px solid #333;
+      }
+
+      .slot-options {
+        margin-top: 10px;
+        background: #1a1a1a;
+        padding: 10px;
+        border-radius: 8px;
+      }
+
+      .slot-options label {
+        font-size: 14px;
+      }
+
+      .links a {
+        color: #66b3ff;
+        text-decoration: none;
+        display: inline-block;
+        margin-top: 10px;
+      }
+
+      .links a:hover {
+        text-decoration: underline;
+      }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+    <script>
+      (function() {
+        emailjs.init("YOUR_EMAILJS_PUBLIC_KEY"); // <-- Replace with your EmailJS Public Key
+      })();
+    </script>
+  </head>
+
+  <body>
+    <h2>🎯 Book Your Mentor Slot</h2>
+    <p>
+      Choose your mentor, select a convenient slot, and instantly create a Google Calendar booking.
+      The mentor will receive an automatic email notification.
+    </p>
+
+    <div class="booking-card">
+      <label>Mentor</label>
+      <select id="mentorId">
+        <option value="">-- Select Mentor --</option>
+        <option value="101" data-email="adityaprakash06102006@gmail.com">
+          Aditya Prakash — UI Developer | Designer Mentor
+        </option>
+        <option value="102" data-email="nayan@mentorconnect.com">
+          Nayan Kumar — Front-End Developer | Freelance Mentor
+        </option>
+      </select>
+
+      <label>Mentor Email</label>
+      <select id="mentorEmailSelect">
+        <option value="">-- Select Mentor Email --</option>
+        <option value="aditya@mentorconnect.com">aditya@mentorconnect.com</option>
+        <option value="nayan@mentorconnect.com">nayan@mentorconnect.com</option>
+      </select>
+
+      <label>Mentee Name</label>
+      <input id="menteeName" placeholder="Enter your name" />
+
+      <label>Select Slot</label>
+      <div class="slot-options">
+        <label>Morning Slots</label>
+        <select id="morningSlot">
+          <option value="">-- Select Morning Time --</option>
+          <option value="09:00">9:00 AM - 9:30 AM</option>
+          <option value="10:00">10:00 AM - 10:30 AM</option>
+        </select>
+
+        <label>Evening Slots</label>
+        <select id="eveningSlot">
+          <option value="">-- Select Evening Time --</option>
+          <option value="16:00">4:00 PM - 4:30 PM</option>
+          <option value="17:00">5:00 PM - 5:30 PM</option>
+        </select>
+      </div>
+
+      <label>Day (Weekdays)</label>
+      <select id="weekday">
+        <option value="">-- Select Day --</option>
+        <option value="2025-11-03">Monday</option>
+        <option value="2025-11-04">Tuesday</option>
+        <option value="2025-11-05">Wednesday</option>
+        <option value="2025-11-06">Thursday</option>
+        <option value="2025-11-07">Friday</option>
+      </select>
+
+      <button id="bookSlot">Create Booking</button>
+
+      <div class="output-box" id="output">No response yet.</div>
+      <div class="links" id="links"></div>
+    </div>
+
+    <!-- Load EmailJS -->
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script>
+  (function() {
+    emailjs.init("RJeZMa4vSGQOkK-Dj"); // <-- Paste your Public Key
+  })();
+</script>
+
+<script>
+  document.getElementById("bookSlot").addEventListener("click", () => {
+    const mentorSelect = document.getElementById("mentorId");
+    const mentorEmailSelect = document.getElementById("mentorEmailSelect");
+    const mentorId = mentorSelect.value;
+    const mentorEmail =
+      mentorEmailSelect.value ||
+      mentorSelect.selectedOptions[0]?.dataset.email;
+    const menteeName = document.getElementById("menteeName").value.trim();
+    const weekday = document.getElementById("weekday").value;
+    const morningSlot = document.getElementById("morningSlot").value;
+    const eveningSlot = document.getElementById("eveningSlot").value;
+    const output = document.getElementById("output");
+    const linksDiv = document.getElementById("links");
+
+    linksDiv.innerHTML = "";
+
+    if (!mentorId || !menteeName || !weekday || (!morningSlot && !eveningSlot)) {
+      output.textContent = "⚠️ Please fill all fields correctly.";
+      return;
+    }
+
+    const time = morningSlot || eveningSlot;
+    const startAt = `${weekday}T${time}:00+05:30`;
+    const endAt = `${weekday}T${time.slice(0, 2)}:30:00+05:30`;
+
+    const bookingData = {
+      mentorId,
+      mentorEmail,
+      menteeName,
+      startAt,
+      endAt,
+      calendarLink: `https://calendar.google.com/calendar/render?action=TEMPLATE&text=Mentorship+Session&dates=${startAt.replace(
+        /-|:|\+/g,
+        ""
+      )}/${endAt.replace(/-|:|\+/g, "")}&details=Session+with+${menteeName}`,
+    };
+
+    output.textContent = JSON.stringify(bookingData, null, 2);
+
+    linksDiv.innerHTML = `
+      <a href="${bookingData.calendarLink}" target="_blank">📅 Add to Google Calendar</a>
+    `;
+
+    // ✉️ Send Email to Mentor
+    emailjs
+      .send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", {
+        to_email: mentorEmail,
+        mentee_name: menteeName,
+        meeting_time: `${weekday} at ${time}`,
+      })
+      .then(() => {
+        alert(
+          `✅ Slot booked successfully!\n\nMentor: ${mentorSelect.options[mentorSelect.selectedIndex].text}\nMentee: ${menteeName}\nTime: ${time}\nDate: ${weekday}\n\n📧 Email sent to ${mentorEmail}`
+        );
+      })
+      .catch((err) => {
+        console.error(err);
+        alert("⚠️ Booking created, but email notification failed.");
+      });
+  });
+</script>
+
+  </body>
+</html>

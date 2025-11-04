@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mentor Connect | Contact</title>
+  <link rel="stylesheet" href="contact.css" />
+  <script defer src="contact.js"></script>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  />
+</head>
+<body>
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="logo">
+      <img src="IMAGES/LOGO.png" alt="Mentor Logo" />
+      <h2>MENTOR CONNECT</h2>
+    </div>
+    <nav>
+      <a href="home.html">Home</a>
+      <a href="loginregis.htm">Sign In</a>
+      <a href="mentor.html">Mentors</a>
+      <a href="about.html">About Us</a>
+      <a href="service.html">Service</a>
+      <a class="active" href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Contact Section -->
+  <section class="contact-section">
+    <!-- Left Info -->
+    <div class="contact-left">
+      <h1>LET’S CONNECT</h1>
+      <h3>Let’s Contact Us!</h3>
+
+      <ul class="contact-info">
+        <li><i class="fa-solid fa-phone"></i> +91 7713921111</li>
+        <li><i class="fa-solid fa-envelope"></i> mentorconnect0@gmail.com</li>
+        <li><i class="fa-solid fa-globe"></i> www.mentorconnect.com</li>
+        <li>
+          <i class="fa-solid fa-location-dot"></i> THE ICFAI UNIVERSITY
+          JHARKHAND<br />Simalia, Ranchi Ring Rd, Ranchi, 835222
+        </li>
+      </ul>
+    </div>
+
+    <!-- Right Form -->
+    <div class="contact-right">
+      <div class="contact-container">
+        <h2>Get In Touch</h2>
+        <p>We'd love to hear from you. Send us a message!</p>
+
+        <form
+          id="contactForm"
+          action="https://getform.io/f/bgdjmjja"
+          method="POST"
+        >
+          <div class="form-group">
+            <label for="name"
+              ><i class="fa-solid fa-user"></i> Name *</label
+            >
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Your Name"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="email"
+              ><i class="fa-solid fa-envelope"></i> Email *</label
+            >
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="xyz@example.com"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="subject"
+              ><i class="fa-solid fa-comment-dots"></i> Subject *</label
+            >
+            <input
+              type="text"
+              id="subject"
+              name="subject"
+              placeholder="How can we help you?"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="message"
+              ><i class="fa-solid fa-pen"></i> Description *</label
+            >
+            <textarea
+              id="message"
+              name="message"
+              rows="5"
+              placeholder="Tell us more about your inquiry..."
+              required
+            ></textarea>
+          </div>
+
+          <button type="submit" class="submit-btn">
+            <i class="fa-solid fa-paper-plane"></i> Send Message
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+</body>
+</html>

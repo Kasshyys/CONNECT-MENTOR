@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mentor Profile - Dark Theme</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    body {
+      background-color: #121212;
+      color: #e0e0e0;
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 40px auto;
+      background-color: #1e1e1e;
+      border-radius: 16px;
+      box-shadow: 0 0 25px rgba(0, 0, 0, 0.6);
+      padding: 30px;
+    }
+
+    .profile-header {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      border-bottom: 1px solid #333;
+      padding-bottom: 20px;
+    }
+
+    .profile-header img {
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #03dac6;
+    }
+
+    .profile-info h2 {
+      margin: 0;
+      color: #fff;
+    }
+
+    .profile-info p {
+      color: #bbb;
+      margin: 5px 0;
+    }
+
+    .details {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      margin-top: 10px;
+      color: #ccc;
+    }
+
+    .details span {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .actions {
+      display: flex;
+      gap: 10px;
+      margin-top: 15px;
+    }
+
+    .btn {
+      padding: 10px 18px;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      font-weight: 500;
+      transition: 0.3s;
+      text-decoration: none;
+      text-align: center;
+      display: inline-block;
+    }
+
+    .btn-primary {
+      background-color: #03dac6;
+      color: #000;
+    }
+
+    .btn-secondary {
+      background-color: transparent;
+      border: 1px solid #03dac6;
+      color: #03dac6;
+    }
+
+    .btn:hover {
+      opacity: 0.85;
+      transform: translateY(-2px);
+    }
+
+    .gallery {
+      display: flex;
+      gap: 15px;
+      overflow-x: auto;
+      margin-top: 25px;
+      padding-bottom: 10px;
+    }
+
+    .gallery img {
+      height: 160px;
+      border-radius: 10px;
+      object-fit: cover;
+      transition: transform 0.3s;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+
+    .about {
+      margin-top: 30px;
+    }
+
+    .about h3 {
+      color: #03dac6;
+      margin-bottom: 10px;
+    }
+
+    .reviews {
+      margin-top: 30px;
+      background-color: #1a1a1a;
+      border-radius: 10px;
+      padding: 20px;
+    }
+
+    .stars {
+      color: gold;
+      font-size: 18px;
+    }
+
+    .review-bars {
+      margin-top: 10px;
+    }
+
+    .bar {
+      display: flex;
+      align-items: center;
+      margin: 6px 0;
+      color: #aaa;
+    }
+
+    .bar span {
+      width: 40px;
+    }
+
+    .bar div {
+      flex: 1;
+      height: 6px;
+      background-color: #333;
+      border-radius: 4px;
+      margin-left: 8px;
+      position: relative;
+    }
+
+    .bar div::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      height: 100%;
+      border-radius: 4px;
+      background-color: #03dac6;
+    }
+
+    .bar[data-value="5"] div::after { width: 100%; }
+    .bar[data-value="4"] div::after { width: 40%; }
+    .bar[data-value="3"] div::after { width: 0%; }
+
+    .user-reviews {
+      margin-top: 15px;
+      background-color: #252525;
+      padding: 10px 15px;
+      border-radius: 8px;
+    }
+
+    .similar {
+      margin-top: 30px;
+      padding: 15px;
+      background-color: #1a1a1a;
+      border-radius: 10px;
+    }
+
+    .similar h4 {
+      color: #03dac6;
+    }
+
+    .mentor-link {
+      color: #66b3ff;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .mentor-link:hover {
+      color: #fff;
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 30px;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="profile-header">
+      <img src="IMAGES/ap.jpg" alt="Mentor Photo">
+      <div class="profile-info">
+        <h2>Aditya Prakash <i class="fa-solid fa-circle-check" style="color:#03dac6;"></i></h2>
+        <p>UI Developer | Designer Mentor</p>
+        <p><i class="fa-solid fa-globe"></i> English, Hindi | <i class="fa-solid fa-briefcase"></i> Exp: 3 Years</p>
+        <div class="details">
+          <span><i class="fa-solid fa-indian-rupee-sign"></i>FREE</span>
+          <span><i class="fa-regular fa-clock"></i> 32 mins</span>
+          <span><i class="fa-solid fa-phone"></i> 414 mins</span>
+        </div>
+
+        <div class="actions">
+          <button class="btn btn-secondary"><i class="fa-regular fa-comment"></i> Start Chat</button>
+          <a href="jitsi-demo/public/book.html" target="_blank" class="btn btn-primary">
+            <i class="fa-solid fa-phone"></i> Start Video Call
+          </a>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="gallery">
+      <img src="IMAGES/ap.jpg" alt="">
+      <img src="IMAGES/AP1.jpg" alt="">
+      <img src="IMAGES/AP2.jpg" alt="">
+      <img src="https://via.placeholder.com/250x160" alt="">
+    </div>
+
+    <div class="about">
+      <h3>About Me</h3>
+      <p>Aditya , I guide aspiring developers and designers to understand the balance between creativity and functionality — helping them master tools like Figma, Adobe XD, React, and Tailwind CSS, and cultivate industry-ready skills. My sessions focus on design thinking, responsive UI, accessibility standards, and real-world project workflows.
+
+Over the years, I’ve collaborated with multiple startups and design teams, refining interfaces that enhance user engagement and business impact. Through mentoring, my goal is to empower learners to build confidence, think strategically, and design with empathy — ensuring they grow into professionals who can deliver exceptional user experiences in any environment.</p>
+    </div>
+
+    <div class="reviews">
+      <h3>Ratings & Reviews</h3>
+      <div class="stars">★★★★★ 5.0</div>
+      <div class="review-bars">
+        <div class="bar" data-value="5"><span>5★</span><div></div></div>
+        <div class="bar" data-value="4"><span>4★</span><div></div></div>
+        <div class="bar" data-value="3"><span>3★</span><div></div></div>
+      </div>
+      <div class="user-reviews">
+        <p><strong>Honey</strong> ⭐⭐⭐⭐⭐ - Very good</p>
+      </div>
+    </div>
+
+    <div class="similar">
+      <h4>Check Similar Consultants</h4>
+      <p>
+  • <a href="mentornayan.html" target="_blank" class="mentor-link">
+    Mentor Nayan Kumar — Front-End Developer | Freelance Mentor
+  </a>
+</p>
+
+    </div>
+
+    <footer>© 2025 MentorConnect | Designed by Empath Coders</footer>
+  </div>
+
+  
+</body>
+</html>
