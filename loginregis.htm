@@ -22,17 +22,28 @@
       </form>
     </div>
 
-    <div class="form-container sign-in">
-      <form>
-        <h1>Sign In</h1>
-        
-        <span>or use your email password</span>
-        <input type="email" placeholder="Email" required>
-        <input type="password" placeholder="Password" required>
-        <a href="#">Forgot Your Password?</a>
-        <button>Sign In</button>
-      </form>
-    </div>
+   <div class="form-container sign-in">
+  <form onsubmit="redirectToDashboard(event)">
+    <h1>Sign In For Mentee</h1>
+    
+    <span>or use your email password</span>
+    <input type="email" placeholder="Email" required>
+    <input type="password" placeholder="Password" required>
+    
+    <a href="#">Forgot Your Password?</a>
+    
+    <button type="submit">Sign In</button>
+  </form>
+</div>
+
+<script>
+  function redirectToDashboard(event) {
+    event.preventDefault(); // stop form from refreshing page
+    // here you can later add login validation if needed
+    window.location.href = "dashboardofmentee.html"; // redirect
+  }
+</script>
+
 
     <div class="toggle-container">
       <div class="toggle">
